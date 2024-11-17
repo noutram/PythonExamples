@@ -17,4 +17,6 @@ message_button.pack(pady=10)
 close_button = tk.Button(root, text="Go Away", command=close_app)
 close_button.pack(pady=10)
 
+# ARSE
+
 root.mainloop()
