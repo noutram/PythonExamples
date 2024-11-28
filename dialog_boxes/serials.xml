@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Records>
+    <Record>
+        <if_serial>12345</if_serial>
+        <lb_serial>67890</lb_serial>
+        <manu_if_serial>ABCDE</manu_if_serial>
+        <manu_lb_serial>FGHIJ</manu_lb_serial>
+    </Record>
+    <Record>
+        <if_serial>54321</if_serial>
+        <lb_serial>09876</lb_serial>
+        <manu_if_serial>KLMNO</manu_if_serial>
+        <manu_lb_serial>PQRST</manu_lb_serial>
+    </Record>
+    <!-- Add more records as needed -->
+</Records>
+
