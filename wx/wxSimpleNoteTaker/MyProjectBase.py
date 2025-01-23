@@ -37,10 +37,10 @@ class MainDialog ( wx.Dialog ):
 
         verticalSizer.Add( self.btnSave, 0, wx.ALIGN_CENTER_HORIZONTAL|wx.ALL, 5 )
 
-        self.txtEdit = wx.TextCtrl( self, wx.ID_ANY, wx.EmptyString, wx.DefaultPosition, wx.DefaultSize, 0 )
+        self.txtEdit = wx.TextCtrl( self, wx.ID_ANY, wx.EmptyString, wx.DefaultPosition, wx.DefaultSize, wx.TE_MULTILINE )
         self.txtEdit.SetMinSize( wx.Size( 300,-1 ) )
 
-        verticalSizer.Add( self.txtEdit, 1, wx.ALIGN_CENTER_HORIZONTAL|wx.ALL|wx.EXPAND, 5 )
+        verticalSizer.Add( self.txtEdit, 1, wx.ALIGN_CENTER_HORIZONTAL|wx.ALL, 5 )
 
         self.lblMessage = wx.StaticText( self, wx.ID_ANY, _(u"Enter notes"), wx.DefaultPosition, wx.DefaultSize, 0 )
         self.lblMessage.Wrap( -1 )
