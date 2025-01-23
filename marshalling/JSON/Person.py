@@ -1,3 +1,6 @@
+"""
+Contains the Person class which represents a person.
+"""
 import json
 
 class Person:
