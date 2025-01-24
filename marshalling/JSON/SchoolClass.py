@@ -115,9 +115,9 @@ if __name__ == "__main__":
     # Print the class details
     school_class1.print_class()
 
-    print(student1.__dict__)
-    print(teacher1.__dict__)
-    print(school_class1.__dict__)
+    print(student1.to_json())
+    print(teacher1.to_json())
+    print(school_class1.to_json())
 
     # Serialize the class to JSON
     json_text1 = school_class1.to_json()
