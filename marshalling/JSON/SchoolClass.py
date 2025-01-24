@@ -38,8 +38,8 @@ printClass():
         """
 
         self.class_name = class_name
-        self.students = [Person]
-        self.teachers = [Person]
+        self.students = []  # Initialize as an empty list
+        self.teachers = []  # Initialize as an empty list
 
     def add_student(self, student: Person):
         """
@@ -77,4 +77,62 @@ printClass():
         Returns:
             str: JSON formatted string
         """
-        return json.dumps(self, default=lambda o: o.__dict__)
+        return json.dumps(self, default=lambda o: o.__dict__, indent=4)
+    
+    # add static method to deserialize the class from JSON
+    @staticmethod
+    def from_json(json_text):
+        """
+        Deserializes a JSON formatted string to a SchoolClass object.
+        Args:
+            json_text (str): JSON formatted string
+        Returns:
+            SchoolClass: SchoolClass object
+        """
+
+        data = json.loads(json_text)
+        school_class = SchoolClass(data['class_name'])
+        school_class.students = [Person(**student) for student in data['students']]
+        school_class.teachers = [Person(**teacher) for teacher in data['teachers']]
+        return school_class
+    
+
+if __name__ == "__main__":
+
+    # Create a new school class
+    school_class1 = SchoolClass("Math Class")
+
+    # Create a new student
+    student1 = Person("Alice", 15)
+
+    # Create a new teacher
+    teacher1 = Person("Bob", 30)
+
+    # Add the student and teacher to the class
+    school_class1.add_student(student1)
+    school_class1.add_teacher(teacher1)
+
+    # Print the class details
+    school_class1.print_class()
+
+    print(student1.__dict__)
+    print(teacher1.__dict__)
+    print(school_class1.__dict__)
+
+    # Serialize the class to JSON
+    json_text1 = school_class1.to_json()
+
+    # Save the JSON to a file
+    with open("school_class1.json", "w", encoding="utf-8") as f:
+        f.write(json_text1)
+
+    # Load the JSON from the file
+    with open("school_class1.json", "r", encoding="utf-8") as f:
+        json_text2 = f.read()
+
+    # Deserialize the class from JSON
+    school_class2 = SchoolClass.from_json(json_text2)
+
+    # Print the deserialized class details
+    school_class2.print_class()
+

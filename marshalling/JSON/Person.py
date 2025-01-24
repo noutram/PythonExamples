@@ -48,7 +48,7 @@ class Person:
         str
             JSON formatted string
         """
-        return json.dumps(self, default=lambda o: o.__dict__) 
+        return json.dumps(self, default=lambda o: o.__dict__, indent=4) 
 
     @staticmethod
     def from_json(json_text):
