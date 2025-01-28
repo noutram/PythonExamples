@@ -1,7 +1,7 @@
 # Python Type Checking
 
 ## VS Code Extensions
-If you examine [this file](.//vscode/extensions.jon), you will see a list of VS Code extensions.
+If you examine [this file](./.vscode/extensions.jon), you will see a list of VS Code extensions.
 
 
 {
