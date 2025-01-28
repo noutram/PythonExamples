@@ -1,9 +1,9 @@
 # Python Type Checking
 
 ## VS Code Extensions
-If you examine [this file](./.vscode/extensions.jon), you will see a list of VS Code extensions.
+If you examine [this file](./.vscode/extensions.json), you will see a list of VS Code extensions.
 
-
+'''JSON
 {
     "recommendations": [
         "github.codespaces",
@@ -21,3 +21,4 @@ If you examine [this file](./.vscode/extensions.jon), you will see a list of VS 
         "ms-python.vscode-pylance"    
     ]
   }
+'''
