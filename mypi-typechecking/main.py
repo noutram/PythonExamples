@@ -26,6 +26,9 @@ class Type1:
     """
 
     def __init__(self) -> None:
+        """
+        Constructs all the necessary attributes for the Type1 object.
+        """
         self.name: str = "Type1"
         self.phone: int = 1234567890
 
