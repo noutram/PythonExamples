@@ -91,5 +91,3 @@ if __name__ == "__main__":
     t1.set_phone(9876543210)
     print(t1)
     t1.set_name(12345)  # This should be underlined in red.
-
-
