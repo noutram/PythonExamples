@@ -53,13 +53,13 @@
       <property name="size">270,303</property>
       <property name="style">wxDEFAULT_DIALOG_STYLE</property>
       <property name="subclass">; ; forward_declare</property>
-      <property name="title"></property>
+      <property name="title">Simple Editor</property>
       <property name="tooltip"></property>
       <property name="two_step_creation">0</property>
       <property name="window_extra_style"></property>
       <property name="window_name"></property>
       <property name="window_style"></property>
-      <object class="wxBoxSizer" expanded="false">
+      <object class="wxBoxSizer" expanded="true">
         <property name="minimum_size"></property>
         <property name="name">verticalSizer</property>
         <property name="orient">wxVERTICAL</property>
