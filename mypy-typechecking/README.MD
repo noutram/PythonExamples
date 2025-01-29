@@ -77,22 +77,25 @@ However, the second function causes a run-time crash as it attempts to add an th
 
 > A compiled type-safe language would at least warn the developer at build time, and more likely produce a compile error.
 
-So we may like the convenience of Python, but might miss some of the safety features of type-safe languages.
+So we may like the convenience of Python, but might miss some of the safety features of type-safe languages. Let's look at ways of getting the tools to do more checking for us.
 
 ## Type Hints
 
 In Python 3, we can add *type hints* to our Python code. So taking the example above, we add type-hints as follows:
 
 ```Python
-    def set_name(self, new_name: str) -> None:
-        if self.name != new_name:
-            self.name = new_name
-            print("Name changed to: ", self.name)
+    def set_serial(self, new_serial: int) -> None:
+        if self.serial != new_serial:
+            self.serial = new_serial
+            print("Serial changed to: ", self.serial)
         else:
-            print("Name is already: ", self.name)
+            print("Serial is already: ", self.serial)
+
+    def get_next_serial(self) -> int:
+        return self.serial + 1
 ```
 
-Note how the parameters and return type of the function are now expressed explicitly. This is great for helping others to use your APIs, but how might be get the computer to help us comply with these type rules?
+Note how the parameters and return type of functions can now be expressed explicitly. This is great for helping others to use your APIs, but how might be get the computer to help us comply with these type rules?
 
 For that, we need python package called [`mypy`](https://www.mypy-lang.org/). You can simply `pip install mypy` in your virtual environment and you're good to go.
 
