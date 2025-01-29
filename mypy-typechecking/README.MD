@@ -6,7 +6,7 @@ If you are accustomed to type-safe languages, such as C, C++, Java or C#, then y
 
 Of course, Python is interpreted and not compiled. In a type-safe compiled language, we often rely on the compile step to spot errors or issue warnings before the code is ever executed. Some languages such as Rust can even refuse to compile if you attempy an operation that is not considered memory-safe.
 
-> In addition to greater performance, a goal of compilers is to pick up errors are build time and NOT run type.
+> In addition to greater performance, a goal of compilers is to pick up errors are build time as opposed to run-time.
 
 You might argue that code should be **tested**. Well, for that to work, your tests need to have full coverage, which can be hard to achieve. There may be branches of code that only run *sporadically* (e.g. a handler for a rare type of error). Of course a diligent developer may try and test all branches through the code, but this requires discipline and can be missed or added as a regression. 
 
