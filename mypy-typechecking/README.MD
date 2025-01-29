@@ -95,7 +95,7 @@ In Python 3, we can add *type hints* to our Python code. So taking the example a
         return self.serial + 1
 ```
 
-Note how the parameters and return type of functions can now be expressed explicitly. This is great for helping others to use your APIs, but how might be get the computer to help us comply with these type rules?
+Note how the parameters and return type of functions can now be expressed explicitly. This is great for helping others to use your APIs, but how might we get the computer to help us comply with these type rules?
 
 For that, we need python package called [`mypy`](https://www.mypy-lang.org/). You can simply `pip install mypy` in your virtual environment and you're good to go.
 
