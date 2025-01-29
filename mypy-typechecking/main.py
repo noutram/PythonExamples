@@ -8,8 +8,8 @@ class Type1:
     ----------
     name : str
         the name of the objec set_namet
-    phone : int
-        the phone number associated with the object
+    serial : int
+        the serial number associated with the object
 
     Methods
     -------
@@ -17,9 +17,9 @@ class Type1:
         Sets the name of the object to new_name
         if it is different from the current name.
 
-    set_phone(new_phone: int)
-        Sets the phone number of the object to new_phone 
-        if it is different from the current phone number.
+    set_serial(new_serial: int)
+        Sets the serial number of the object to new_serial 
+        if it is different from the current serial number.
 
     __str__()
         Returns a string representation of the object.
@@ -30,7 +30,7 @@ class Type1:
         Constructs all the necessary attributes for the Type1 object.
         """
         self.name: str = "Type1"
-        self.phone: int = 1234567890
+        self.serial: int = 1234567890
 
     def set_name(self, new_name: str) -> None:
         """
@@ -48,46 +48,62 @@ class Type1:
         else:
             print("Name is already: ", self.name)
 
-    def set_phone(self, new_phone: int) -> None:
+    def set_serial(self, new_serial: int) -> None:
         """
-        Sets the phone number to a new value if it is different from the current one.
+        Sets the serial number to a new value if it is different from the current one.
 
         Args:
-            new_phone (int): The new phone number to set.
+            new_serial (int): The new serial number to set.
 
         Returns:
             None
         """
-        if self.phone != new_phone:
-            self.phone = new_phone
-            print("Phone changed to: ", self.phone)
+        if self.serial != new_serial:
+            self.serial = new_serial
+            print("Serial changed to: ", self.serial)
         else:
-            print("Phone is already: ", self.phone)
+            print("Serial is already: ", self.serial)
 
+    def get_next_serial(self) -> int:
+        """
+        Returns the next serial number to be used.
+
+        Returns:
+            int: The next serial number.
+        """
+        return self.serial + 1
+    
     # method to print the object
     def __str__(self) -> str:
         """
         Returns a string representation of the object.
 
-        The string includes the name and phone attributes of the object.
+        The string includes the name and serial attributes of the object.
 
         Returns:
-            str: A formatted string containing the name and phone.
+            str: A formatted string containing the name and serial.
         """
-        return f"Name: {self.name}, Phone: {self.phone}"
+        return f"Name: {self.name}, Serial: {self.serial}"
 
 
 # main code to test this class
 # Note - install the plugins in ./vscode/extensions.json 
 # Use `code --list-extensions` to verify all installed extensions
 
+
 if __name__ == "__main__":
     t1 = Type1()
     t1.set_name("Type1")
-    t1.set_phone(1234567890)
+    t1.set_serial(1234567890)
     print(t1)
 
     t1.set_name("Type2")
-    t1.set_phone(9876543210)
+    t1.set_serial(9876543210)
     print(t1)
     t1.set_name(12345)  # This should be underlined in red.
+
+    # Now we see how this can break at runtime
+    t1.set_serial("000")
+    next_sn = t1.get_next_serial()
+    print("Next serial number: ", next_sn)
+

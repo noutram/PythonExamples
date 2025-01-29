@@ -37,7 +37,43 @@ would be equivalent to:
 obj.set_name(1234)
 ```
 
-Now to someone accustomed with writing in type-safe languages, this is likely to generate a reaction.
+This seems to work however. Now to someone accustomed with writing in type-safe languages, this may well  generate a reaction.
+
+Now consider a different function:
+
+```python
+    def set_serial(self, new_serial):
+        if self.serial != new_serial:
+            self.serial = new_serial
+            print("Serial changed to: ", self.serial)
+        else:
+            print("Serial is already: ", self.serial)
+
+    def get_next_serial(self) -> int:
+        return self.serial + 1
+```
+
+The serial number is intended to be an integer. The following code works without issues:
+
+```python
+    t1.set_serial(000)
+    next_sn = t1.get_next_serial()
+    print("Next serial number: ", next_sn)
+```
+
+But what if we accidentally pass a string representation of a number?
+
+```python
+    t1.set_serial("000")
+    next_sn = t1.get_next_serial()
+    print("Next serial number: ", next_sn)
+```
+
+The first line executes, and sets the member variable to a `string` type.
+
+> Python variables can change type at run-time
+
+However, the second function causes a run-time crash as it attempts to add an the integer `1` to the string `"000"`.
 
 ## Type Hints
 
