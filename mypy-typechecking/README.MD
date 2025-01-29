@@ -25,19 +25,19 @@ Central to this discussion is the convenient but also dangerous *implicit type c
             print("Name is already: ", self.name)
 ```
 
-If you pass an `integer` as a parameter, the Python interpreter will automatically convert this to a `string`.
+If you pass a `string` as a parameter, the Python interpreter will automatically change the underlying type to `str`.
 
 ```Python
 obj.set_name("1234")
 ```
 
-would be equivalent to:
+If you pass an `integer` as a parameter, the Python interpreter will automatically change the underlying type an `int`.
 
 ```Python
 obj.set_name(1234)
 ```
 
-This seems to work however. Now to someone accustomed with writing in type-safe languages, this may well  generate a reaction.
+This will seems to work however as all we ever do in this code is print the value. Now to someone accustomed with writing in type-safe languages, this may well ring alarm bells!
 
 Now consider a different function:
 
@@ -53,7 +53,7 @@ Now consider a different function:
         return self.serial + 1
 ```
 
-The serial number is intended to be an integer. The following code works without issues:
+Note that `get_next_serial` performs arithmetic. This makes sense only if the serial number is a numeric type. The following code works without issue:
 
 ```python
     t1.set_serial(000)
@@ -75,9 +75,13 @@ The first line executes, and sets the member variable to a `string` type.
 
 However, the second function causes a run-time crash as it attempts to add an the integer `1` to the string `"000"`.
 
+> A compiled type-safe language would at least warn the developer at build time, and more likely produce a compile error.
+
+So we may like the convenience of Python, but might miss some of the safety features of type-safe languages.
+
 ## Type Hints
 
-We can add *type hints* to our Python code. So taking the example above, we add type-hints as follows:
+In Python 3, we can add *type hints* to our Python code. So taking the example above, we add type-hints as follows:
 
 ```Python
     def set_name(self, new_name: str) -> None:
