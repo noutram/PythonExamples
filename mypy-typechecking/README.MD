@@ -37,7 +37,7 @@ If you pass an `integer` as a parameter, the Python interpreter will automatical
 obj.set_name(1234)
 ```
 
-This will seems to work however as all we ever do in this code is print the value. Now to someone accustomed with writing in type-safe languages, this may well ring alarm bells!
+This will seem to work however as all we ever do in this code is print the value. Now to someone accustomed with writing in type-safe languages, this may well ring alarm bells!
 
 Now consider a different function:
 
@@ -92,7 +92,7 @@ In Python 3, we can add *type hints* to our Python code. So taking the example a
             print("Name is already: ", self.name)
 ```
 
-NOte how the parameters and return type of the function are now expressed explicitly. This is great for helping others to use your APIs, but how might be get the computer to help us comply with these type rules?
+Note how the parameters and return type of the function are now expressed explicitly. This is great for helping others to use your APIs, but how might be get the computer to help us comply with these type rules?
 
 For that, we need python package called [`mypy`](https://www.mypy-lang.org/). You can simply `pip install mypy` in your virtual environment and you're good to go.
 
