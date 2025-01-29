@@ -106,7 +106,7 @@ mypy myfile.py
 
 ```
 
-where `myfile.py` is your Python source file. This is only one of many coding aids for Python, so While we are here, let's get as much help as we can. Furthermore, wouldn't it be nice if these tools ran in the background and flagged errors with intellisense? This is where Visual Studio Code extensions can come in handy.
+where `myfile.py` is your Python source file. This is only one of many coding aids for Python, so while we are here, let's get as much help as we can. Furthermore, wouldn't it be nice if these tools ran in the background and flagged errors with intellisense? This is where Visual Studio Code extensions can come in handy.
 
 ## Coding Aids
 
