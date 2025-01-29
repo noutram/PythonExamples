@@ -10,7 +10,7 @@ Of course, Python is interpreted and not compiled. In a type-safe compiled langu
 
 You might argue that code should be **tested**. Well, for that to work, your tests need to have full coverage, which can be hard to achieve. There may be branches of code that only run *sporadically* (e.g. a handler for a rare type of error). Of course a diligent developer may try and test all branches through the code, but this requires discipline and can be missed or added as a regression. 
 
-We are human, and prone to mistakes, so need all the help we can get
+We are human, and prone to mistakes, so need all the help we can get. Build tools should help us as much as possible, especially for tasks that are repetetive and/or time consuming.
 
 ## Implicit Type Conversion
 
