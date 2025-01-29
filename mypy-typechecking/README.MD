@@ -143,5 +143,5 @@ Once these are installed, you should see intellisense underline code that needs 
 
 Clone this repository, launch VS Code and open the folder with this example.
 
-There is a type error. Can you find and fix it?
+There are two type errors. Can you find and fix them using these tools?
 
