@@ -133,6 +133,9 @@ The following are all extensions from Microsoft, so are safe to install. You may
   }
 ```
 
+When the project is opened in VSCode, there will be a pop-up asking if you want to install the workspace extensions from `extensions.json`.
+These extensions are also listed in the Extensions tab under Workspace Recommendations.
+
 Once these are installed, you should see intellisense underline code that needs attention:
 
 * `pylint` - linting suggestions
